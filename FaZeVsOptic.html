@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Atlanta FaZe vs OpTic Texas</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #1e1e2f, #2a2a3c);
+      color: #fff;
+      line-height: 1.6;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: #c00000;
+      color: white;
+      border-radius: 12px;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    .tagline {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      font-style: italic;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 20px;
+      background: #2f2f44;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.4);
+      position: relative;
+      z-index: 2;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    section h2 {
+      color: #f33;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #bbb;
+      font-size: 0.9rem;
+    }
+
+    canvas.side-logo {
+      position: fixed;
+      top: 50%;
+      width: 100px;
+      height: 100px;
+      opacity: 0.15;
+      transform: translateY(-50%);
+      z-index: 1;
+    }
+
+    #leftLogo {
+      left: 10px;
+    }
+
+    #rightLogo {
+      right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      canvas.side-logo {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Canvas placeholders for logos -->
+  <canvas id="leftLogo" class="side-logo" width="100" height="100"></canvas>
+  <canvas id="rightLogo" class="side-logo" width="100" height="100"></canvas>
+
+  <header>
+    <h1>Why Atlanta FaZe Dominates OpTic Texas</h1>
+    <p class="tagline">FaZe isn't just a clan — it's a mindset.</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>Championships & Consistency</h2>
+      <p>Atlanta FaZe has consistently been at the top of the Call of Duty League. From their 2021 championship win to constant top placements, they’ve proven they’re built to win. OpTic may have legacy — but FaZe owns the present.</p>
+    </section>
+
+    <section>
+      <h2>Star Power</h2>
+      <p>Simp, aBeZy, Cellium, and Drazah are more than players — they’re legends in the making. FaZe’s roster is stacked with MVPs and highlight machines, while OpTic struggles with consistency.</p>
+    </section>
+
+    <section>
+      <h2>Strategy Over Hype</h2>
+      <p>FaZe doesn't just play — they outthink. Their rotations, map control, and clutch teamwork show a level of discipline and planning that OpTic can’t always match. It’s not just about skill, it’s about smart plays.</p>
+    </section>
+
+    <section>
+      <h2>Brand Power</h2>
+      <p>FaZe isn’t just an esports team. It's a lifestyle, a brand, and a movement with global influence. From collabs to creators, FaZe's cultural reach far outpaces OpTic’s green wall.</p>
+    </section>
+
+    <section>
+      <h2>Final Thoughts</h2>
+      <p>OpTic Texas has a legacy, no doubt — but Atlanta FaZe is the future. Whether it's in-game dominance, elite players, or next-level branding, FaZe continues to lead. FaZe up.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Atlanta FaZe Fan Page</p>
+  </footer>
+
+  <!-- JavaScript to draw logos -->
+  <script>
+    // Simulated FaZe logo (Red F-like shape)
+    const drawFazeLogo = (ctx) => {
+      ctx.fillStyle = "#ff0000";
+      ctx.beginPath();
+      ctx.moveTo(10, 30);
+      ctx.lineTo(90, 30);
+      ctx.lineTo(90, 45);
+      ctx.lineTo(40, 45);
+      ctx.lineTo(40, 60);
+      ctx.lineTo(70, 60);
+      ctx.lineTo(70, 75);
+      ctx.lineTo(40, 75);
+      ctx.lineTo(40, 90);
+      ctx.lineTo(10, 90);
+      ctx.closePath();
+      ctx.fill();
+    };
+
+    // Simulated OpTic logo (Green O with G shape)
+    const drawOpticLogo = (ctx) => {
+      ctx.fillStyle = "#00ff00";
+      ctx.beginPath();
+      ctx.arc(50, 50, 35, 0, 2 * Math.PI);
+      ctx.fill();
+
+      ctx.fillStyle = "#2a2a3c"; // Background color for cut-out
+      ctx.beginPath();
+      ctx.arc(50, 50, 20, 0, 2 * Math.PI);
+      ctx.fill();
+
+      ctx.fillStyle = "#00ff00";
+      ctx.fillRect(40, 45, 40, 15); // Simulated G arm
+    };
+
+    // Draw FaZe
+    const fazeCanvas = document.getElementById("leftLogo");
+    const fazeCtx = fazeCanvas.getContext("2d");
+    drawFazeLogo(fazeCtx);
+
+    // Draw OpTic
+    const opticCanvas = document.getElementById("rightLogo");
+    const opticCtx = opticCanvas.getContext("2d");
+    drawOpticLogo(opticCtx);
+  </script>
+</body>
+</html>
